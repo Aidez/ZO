@@ -1,0 +1,13 @@
+local wtf = { (game:GetService("ReplicatedStorage"):WaitForChild(game:GetService("ReplicatedStorage"):WaitForChild("General"):WaitForChild("Config"):WaitForChild("wrnd2"):FindFirstChildOfClass("StringValue").Value)) };
+game:GetService('RunService').Stepped:connect(function()
+    if game.Players.LocalPlayer.Character ~= nil then
+        if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+            wtf[1]:FireServer("Parry", game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool"), true)
+            if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool"):FindFirstChild("Stunned") then
+                game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Stunned.Value = false
+            end
+        end
+    end
+end)
+
+
